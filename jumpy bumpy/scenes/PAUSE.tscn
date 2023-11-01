@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://FONTS/ITCKRIST.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://FONTS/JOKERMAN.TTF" type="DynamicFontData" id=2]
+[ext_resource path="res://script/PAUSE GAME.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.227451, 0.207843, 0.207843, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
+shadow_size = 10
+
+[sub_resource type="DynamicFont" id=2]
+size = 51
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 22
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 18
+font_data = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 590.0
+custom_constants/margin_right = 40
+custom_constants/margin_top = 40
+custom_constants/margin_left = 40
+custom_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+margin_left = 40.0
+margin_top = 40.0
+margin_right = 964.0
+margin_bottom = 540.0
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 2 )
+text = "PAUSED"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 924.0
+margin_bottom = 154.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer"]
+margin_left = 379.0
+margin_right = 544.0
+margin_bottom = 72.0
+
+[node name="RESTART" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_right = 165.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 4 )
+text = "RESTART"
+
+[node name="QUIT TO MENU" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+margin_top = 41.0
+margin_right = 165.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 5 )
+text = "QUIT TO MENU"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/RESTART" to="." method="_on_RESTART_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/VBoxContainer/QUIT TO MENU" to="." method="_on_QUIT_TO_MENU_pressed"]

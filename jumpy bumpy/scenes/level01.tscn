@@ -1,0 +1,149 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://tiles/greenplatformtileset.tres" type="TileSet" id=2]
+[ext_resource path="res://bgroung/towerAlt.png" type="Texture" id=3]
+[ext_resource path="res://FONTS/ITCKRIST.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://script/level01.gd" type="Script" id=5]
+[ext_resource path="res://game pause.gd" type="Script" id=7]
+[ext_resource path="res://scenes/jewel.tscn" type="PackedScene" id=8]
+[ext_resource path="res://bgroung/bush4.png" type="Texture" id=9]
+[ext_resource path="res://bgroung/treeDead.png" type="Texture" id=10]
+[ext_resource path="res://bgroung/bushAlt4.png" type="Texture" id=11]
+[ext_resource path="res://script/Area2D1.gd" type="Script" id=12]
+[ext_resource path="res://bgroung/houseAlt1.png" type="Texture" id=13]
+[ext_resource path="res://scenes/Area2D6.gd" type="Script" id=15]
+[ext_resource path="res://script/HTTPRequest.gd" type="Script" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 403 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 1
+outline_color = Color( 0.0117647, 0.0117647, 0.0117647, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 2491.75, 430.25 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 74, 135.25 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 2649.5, 239 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 2, 0 )
+script = ExtResource( 5 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -810, 40 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 23, 3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 131096, 0, 0, 131097, 0, 0, 262148, 12, 0, 262149, 5, 0, 262150, 5, 0, 262151, 13, 0, 262160, 0, 0, 262163, 12, 0, 262164, 7, 0, 262165, 7, 0, 262166, 13, 0, 262183, 12, 0, 262184, 7, 0, 262185, 7, 0, 262186, 7, 0, 262187, 13, 0, 262199, 12, 0, 262200, 7, 0, 262201, 7, 0, 262202, 13, 0, 327680, 12, 0, 327681, 7, 0, 327682, 7, 0, 327683, 13, 0, 327693, 12, 0, 327694, 13, 0, 327713, 10, 0, 327714, 11, 0, 327731, 0, 0, 327732, 0, 0, 327741, 0, 0, 327746, 10, 0, 327747, 11, 0, 393225, 12, 0, 393226, 7, 0, 393227, 13, 0, 458804, 0, 0, 458805, 0, 0, 458806, 0, 0, 458815, 10, 0, 458816, 11, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524313, 0, 0, 524314, 0, 0, 524338, 0, 0, 524358, 10, 0, 524359, 11, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589854, 0, 0, 589855, 0, 0, 589856, 0, 0, 589857, 0, 0, 589858, 0, 0, 655370, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655390, 0, 0, 655394, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 655405, 0, 0, 655407, 10, 0, 655408, 7, 0, 655409, 7, 0, 655410, 11, 0, 655418, 0, 0, 655420, 10, 0, 655421, 11, 0, 786431, 1, 0, 720896, 2, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 720930, 0, 0, 720936, 0, 0, 720951, 0, 0, 720952, 0, 0, 720953, 0, 0, 720954, 0, 0, 720961, 0, 0, 720962, 0, 0, 720964, 0, 0, 720965, 0, 0, 720966, 0, 0, 720967, 0, 0, 720968, 0, 0, 720969, 10, 0, 720970, 11, 0, 720972, 0, 0, 720974, 0, 0, 786466, 12, 0, 786467, 6, 0, 786468, 6, 0, 786469, 6, 0, 786470, 6, 0, 786471, 6, 0, 786472, 13, 0, 786477, 10, 0, 786478, 11, 0, 786483, 0, 0, 786484, 0, 0, 786485, 0, 0, 786486, 0, 0, 786494, 0, 0, 786495, 0, 0, 786496, 0, 0, 786497, 0, 0, 786512, 1, 0, 786513, 2, 0, 786514, 2, 0, 786515, 3, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -13, 362 )
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 908.0
+margin_top = 26.0
+margin_right = 956.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 2 )
+text = "000000"
+
+[node name="pause" type="Area2D" parent="."]
+position = Vector2( 60, 816 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pause"]
+position = Vector2( 2520, -355 )
+shape = SubResource( 4 )
+
+[node name="jewel" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1051, 535 )
+
+[node name="jewel2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 752, 545 )
+
+[node name="BushAlt4" type="Sprite" parent="."]
+position = Vector2( 691, 342 )
+texture = ExtResource( 11 )
+
+[node name="TowerAlt" type="Sprite" parent="."]
+position = Vector2( 5239, 650 )
+scale = Vector2( 0.582192, 0.508163 )
+texture = ExtResource( 3 )
+
+[node name="TreeDead" type="Sprite" parent="."]
+position = Vector2( 4725.5, 592.5 )
+scale = Vector2( 0.582192, 0.508163 )
+texture = ExtResource( 10 )
+
+[node name="Bush4" type="Sprite" parent="."]
+position = Vector2( 3085.5, 616.5 )
+scale = Vector2( 0.781098, 0.667126 )
+texture = ExtResource( 9 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 5313, 574 )
+shape = SubResource( 5 )
+
+[node name="HouseAlt1" type="Sprite" parent="."]
+position = Vector2( 34, 613 )
+scale = Vector2( 0.310448, 0.426339 )
+texture = ExtResource( 13 )
+
+[node name="jewel3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1856, 632 )
+
+[node name="jewel4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2040, 512 )
+
+[node name="jewel5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2464, 688 )
+
+[node name="jewel6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2944, 592 )
+
+[node name="jewel7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5152, 696 )
+
+[node name="jewel8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3272, 448 )
+
+[node name="jewel9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4120, 408 )
+
+[node name="jewel10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 4568, 464 )
+
+[node name="GAME OVER" type="Area2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GAME OVER"]
+position = Vector2( 2712.5, 1225 )
+shape = SubResource( 7 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+use_threads = true
+script = ExtResource( 16 )
+
+[connection signal="body_entered" from="pause" to="pause" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="pause" to="pause" method="_on_Area2D2_body_exited"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="GAME OVER" to="GAME OVER" method="_on_Area2D3_body_entered"]
